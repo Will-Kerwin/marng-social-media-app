@@ -42,6 +42,8 @@ module.exports = {
                     await post.save();
                     return post;
                 } else throw new AuthenticationError("Action now allowed")
+            } else {
+                throw new UserInputError("post not found");
             }
         }
     }
