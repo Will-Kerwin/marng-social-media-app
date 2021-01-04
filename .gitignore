@@ -5,3 +5,7 @@ config.js
 package-lock.json
 
 yarn.lock
+
+client/yarn.lock
+
+client/node_modules
