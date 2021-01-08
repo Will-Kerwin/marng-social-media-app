@@ -4,6 +4,7 @@ import { useMutation, gql } from "@apollo/client";
 
 import {useForm} from "../util/hooks";
 import {AuthContext} from "../context/auth"
+import {LOGIN_USER} from "../util/graphql"
 
 function Login(props) {
   const context = useContext(AuthContext);
@@ -63,21 +64,6 @@ function Login(props) {
   );
 }
 
-const LOGIN_USER = gql`
-  mutation login(
-    $username: String!
-    $password: String!
-  ) {
-    login(
-        username: $username password: $password
-    ) {
-      id
-      email
-      username
-      createdAt
-      token
-    }
-  }
-`;
+
 
 export default Login;
