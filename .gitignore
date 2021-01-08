@@ -6,9 +6,6 @@ package-lock.json
 
 yarn.lock
 
-
-
-
 # dependencies
 client/node_modules
 client/.pnp
