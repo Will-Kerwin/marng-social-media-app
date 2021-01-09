@@ -94,3 +94,31 @@ export const LIKE_POST_MUTATION = gql`
     }
   }
 `;
+
+export const FETCH_POST_QUERY = gql`
+  query getPost($postId: ID!) {
+    getPost(postId: $postId) {
+      likes {
+        username
+      }
+      likeCount
+      commentCount
+      comments {
+        createdAt
+        body
+        username
+      }
+      body
+      createdAt
+      username
+      id
+    }
+  }
+`;
+
+
+export const DELETE_POST_MUTATION = gql`
+  mutation deletePost($postId: ID!){
+      deletePost(postId: $postId) 
+  }
+`
