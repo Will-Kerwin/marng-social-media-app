@@ -17,7 +17,7 @@ const server = new ApolloServer({
 });
 
 // gets port from env
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Connect to mongo database
 mongoose
