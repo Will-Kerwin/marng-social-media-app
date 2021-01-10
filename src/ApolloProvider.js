@@ -6,7 +6,7 @@ import {setContext} from "@apollo/client/link/context";
 
 // creates a link with the server
 const httpLink = createHttpLink({
-    uri: "http://localhost:5000"
+    uri: "https://kd-merng-social.herokuapp.com/"
 })
 
 // adds the authorization to header so we can access restricted routes
