@@ -18,3 +18,5 @@ It's key features involve:
 ### Problems encountered
 
 deoplying non master branches to heroku require the following syntax git push heroku <branchname>:master
+
+config.js didn't want connection string on public repo work around was use heroku local to be enviromentally aware
