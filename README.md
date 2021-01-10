@@ -13,3 +13,8 @@ It's key features involve:
 
 - hashing passwords on creation to ensure security
 
+### Deployment
+
+### Problems encountered
+
+deoplying non master branches to heroku require the following syntax git push heroku <branchname>:master
