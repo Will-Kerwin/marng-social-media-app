@@ -28,3 +28,4 @@ client/yarn-error.log*
 client/yarn.lock
 
 client/.eslintcache
+node_modules
