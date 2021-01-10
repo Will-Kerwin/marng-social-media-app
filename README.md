@@ -13,3 +13,6 @@ It's key features involve:
 
 - hashing passwords on creation to ensure security
 
+### deployment
+
+tried netlify for front end to get feel of them both 
