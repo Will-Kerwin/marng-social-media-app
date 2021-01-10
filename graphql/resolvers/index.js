@@ -1,8 +1,9 @@
 const postsResolvers = require("./posts");
-const { Mutation } = require("./users");
 const usersResolvers = require("./users");
 const commentsResolvers = require("./comments");
 
+
+// index which houses all resolvers for easy interaction
 module.exports = {
     Post:{
         likeCount: (parent) => parent.likes.length,

@@ -9,10 +9,13 @@ import {
 } from "../util/graphql";
 
 function DeleteButton({ postId, commentId, callback }) {
+  // sets state of the confirm overlay
   const [confirmOpen, setConfirmOpen] = useState(false);
 
+  // because we can delete either comment or post this checks if commentId is given and decides which mutation to use
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
 
+  // useMutation hook
   const [deletePostOrMutation] = useMutation(mutation, {
     update(proxy) {
       setConfirmOpen(false);

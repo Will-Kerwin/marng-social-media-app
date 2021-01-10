@@ -1,5 +1,7 @@
 const { extendSchemaImpl } = require("graphql/utilities/extendSchema");
 
+
+// takes in required fields for user then validates to ensure no errors in forms
 module.exports.validateRegisterInput = (
   username,
   email,
@@ -13,6 +15,7 @@ module.exports.validateRegisterInput = (
   if (email.trim() == "") {
     errors.email = "email must not be empty";
   } else {
+    // basic email regex 
     const regEx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     if (!email.match(regEx)) {
       errors.email = "Email must a valid email address";
@@ -24,6 +27,7 @@ module.exports.validateRegisterInput = (
     errors.confirmPassword = "Passwords must match";
   }
 
+  // Object.keys ensures a boolean result if errors is empty
   return {
     errors,
     valid: Object.keys(errors).length < 1,

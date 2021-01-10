@@ -10,8 +10,9 @@ function MenuBar() {
   const path = pathname === "/" ? "home" : pathname.substr(1);
   const [activeItem, setActiveItem] = useState(path);
 
-  const handleItemClick = (e, { name }) => setActiveItem(name);
+  const handleItemClick = (_, { name }) => setActiveItem(name);
 
+  // sets display of menu bar depending on authenticated user
   const menuBar = user ? (
     <Menu pointing secondary size="massive" color="teal">
       <Menu.Item

@@ -8,12 +8,14 @@ import {LIKE_POST_MUTATION} from "../util/graphql"
 function LikeButton({ post: { id, likeCount, likes }, user }) {
   const [liked, setLiked] = useState(false);
 
+  // if user has liked post then toggles display of button
   useEffect(() => {
     if (user && likes.find((like) => (like.username === user.username))) {
       setLiked(true);
     } else setLiked(false);
   }, [user, likes]);
 
+  // useMutation hook
   const [likePost] = useMutation(LIKE_POST_MUTATION,{
       variables: {postId: id},
       onError(err){
@@ -21,6 +23,7 @@ function LikeButton({ post: { id, likeCount, likes }, user }) {
       }
   })
 
+  // sets markup for button depending on state redirects to login if unauthenticated
   const likeButton = user ? (
     liked ? (
       <Button color="teal">
