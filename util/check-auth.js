@@ -3,9 +3,9 @@ const { AuthenticationError } = require("apollo-server");
 const jwt = require("jsonwebtoken")
 const {SECRET_KEY} = require("../config");
 
-module.exports = (context) => {
+module.exports = ({req:{headers:{authorization}}}) => {
     // context = {...headers}
-    const authHeader = context.req.headers.authorization;
+    const authHeader = authorization;
     if (authHeader){
         // Bearer ...
         const token = authHeader.split('Bearer ')[1];
@@ -21,5 +21,5 @@ module.exports = (context) => {
         }
         throw new Error("Authentication token must be \'Bearer [token]\'");
     }
-    throw new Error("authorization header must be provided");
+    throw new Error("Authorization header must be provided");
 }
